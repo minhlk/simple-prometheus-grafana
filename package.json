@@ -1,0 +1,16 @@
+{
+  "name": "rock-paper-scissors",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "MinhLK",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "prom-client": "^15.1.2"
+  }
+}
