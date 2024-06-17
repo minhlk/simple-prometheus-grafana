@@ -55,6 +55,24 @@ app.get('/metrics', async (req, res) => {
     res.end(await register.metrics())
 })
 
+//START logging to File through Fluentd
+import { FluentClient } from '@fluent-org/logger';
+
+// The 2nd argument can be omitted. Here is a default value for options.
+const logger = new FluentClient('fluentd.test', {
+    socket: {
+        host: 'fluentd',
+        port: 24224,
+        timeout: 3000, // 3 seconds
+    }
+});
+
+app.get('/logs', (req, res) => {
+    let message = 'Random Number: ' + Math.floor(Math.random() * 10)
+    logger.emit('follow', {from: 'userA', to: 'userB', message: message});
+    res.send(message)
+})
+
 app.listen(3001, () => {
     console.log('Listen on port 3001');
 });

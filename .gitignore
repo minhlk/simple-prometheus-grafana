@@ -1,3 +1,5 @@
 node_modules
 grafana/data
 prometheus/data
+fluentd/log/*
+!fluentd/log/.gitkeep

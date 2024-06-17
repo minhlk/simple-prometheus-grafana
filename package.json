@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "prom-client": "^15.1.2"
+    "prom-client": "^15.1.2",
+    "@fluent-org/logger": "^1.0.2"
   }
 }

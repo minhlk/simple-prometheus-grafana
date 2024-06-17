@@ -46,3 +46,13 @@ services:
       - ./grafana/data:/var/lib/grafana
     depends_on:
       - metric_app
+
+  fluentd:
+    image: fluent/fluentd:edge
+    container_name: fluentd-log
+    ports:
+      - 24224:24224
+      - 24224:24224/udp
+    volumes:
+      - ./fluentd/conf:/fluentd/etc
+      - ./fluentd/log:/fluentd/log
